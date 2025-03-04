@@ -71,6 +71,26 @@ public class ProyectoController {
         List<Comida> comidas = servicio3.listarComida();
         
         modelo.addAttribute("comidas", comidas);
+        
+        Comida h1 = new Comida("Doble Cheeseburger", "Hamburguesa", 4.5);
+        Comida h2 = new Comida("Big Mac", "Hamburguesa", 4.5);
+        Comida h3 = new Comida("Cuarto de Libra", "Hamburguesa", 5.5);
+        Comida h4 = new Comida("Patatas Fritas", "Patatas", 0.5);
+        Comida h5 = new Comida("Patatas Deluxe", "Patatas", 0.75);
+        Comida h6 = new Comida("Patatas Gratinadas", "Patatas", 1);
+        Comida h7 = new Comida("Coca Cola", "Bebida", 1.5);
+        Comida h8 = new Comida("Fanta de Naranja", "Bebida", 1.5);
+        Comida h9 = new Comida("Agua", "Bebida", 1);
+        
+        servicio3.guardarComida(h1);
+        servicio3.guardarComida(h2);
+        servicio3.guardarComida(h3);
+        servicio3.guardarComida(h4);
+        servicio3.guardarComida(h5);
+        servicio3.guardarComida(h6);
+        servicio3.guardarComida(h7);
+        servicio3.guardarComida(h8);
+        servicio3.guardarComida(h9);
 		
 		return "index";
 	}
@@ -137,37 +157,6 @@ public class ProyectoController {
 	
 	@PostMapping("/registro") // Página de registro
 	public String registro(@Valid @ModelAttribute("usuario") Usuario usuario, BindingResult bindingResult, @RequestParam(name="password2", required=true) String password2, @RequestParam(name="adminPassword", required=true) String adminPassword, Model modelo) {
-		/*List<Usuario> usuarios = servicio.listarUsuario();
-		
-		boolean bandera = false;
-		
-		for (Usuario user : usuarios) {
-			if (user.getUsuario().equals(usuario)) {
-				bandera = true; // No puede haber 2 usuarios con el mismo nombre
-			}
-		}
-		
-		if (bandera == false) {
-			if (password.equals(password2)) {
-				String rol = "";
-				
-				if (adminPassword.equals("AdMIn@_741_?adMIN")) {
-					rol = "admin";
-				} else {
-					rol = "user";
-				}
-				
-				Usuario nuevoUsuario = new Usuario(usuario, password, rol);
-				servicio.guardarUsuario(nuevoUsuario);
-				return "redirect:/login";
-			} else {
-				modelo.addAttribute("error", "No coinciden las contraseñas");
-				return "registro";
-			}
-		} else {
-			modelo.addAttribute("error", "El nombre de usuario ya existe");
-			return "registro";
-		}*/
 		
 		if (bindingResult.hasErrors()) {
 	        return "registro";
