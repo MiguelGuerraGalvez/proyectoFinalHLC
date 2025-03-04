@@ -58,6 +58,20 @@ public class ProyectoController {
 		}
 		
 		modelo.addAttribute("usuario", usuarioLoggeado);
+
+		servicio3.borrarComida(1);
+		servicio3.borrarComida(2);
+		servicio3.borrarComida(3);
+		servicio3.borrarComida(7);
+		servicio3.borrarComida(10);
+		servicio3.borrarComida(11);
+		servicio3.borrarComida(12);
+		servicio3.borrarComida(13);
+		servicio3.borrarComida(14);
+		servicio3.borrarComida(15);
+		servicio3.borrarComida(16);
+		servicio3.borrarComida(17);
+		servicio3.borrarComida(18);
 		
 		Usuario usuario = servicio.buscarUsuarioPorNombre(usuarioLoggeado);
 		
