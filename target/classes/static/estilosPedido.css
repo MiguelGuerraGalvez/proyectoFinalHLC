@@ -1,0 +1,26 @@
+body{
+    background-color: #D52B1E;
+	color: white;
+	font-size: 200%;
+}
+
+h1, h2{
+	text-align: center;
+}
+
+.pedido{
+	background-color: #FDC92B;
+	border: 2px solid white;
+	border-radius: 20px;
+	margin: 0 auto;
+	text-align: center;
+	width: 50vw;
+	margin-bottom: 20px;
+}
+
+a{
+	color: white;
+	text-decoration: none;
+	width: 360px;
+	margin-left: calc((100vw / 2) - (360px / 2));
+}

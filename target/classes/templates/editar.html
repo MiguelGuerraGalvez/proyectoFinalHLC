@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Usuario</title>
+	<link rel='stylesheet' href='estilosCrearEditar.css' type='text/css'>
+</head>
+
+<body>
+	<h1 class="text-center">Edición de Usuarios</h1>
+	
+	<form th:action="@{/administracion/{id}(id=${usuario.id})}" th:object="${usuario}" method="post">
+		<section>
+			<article>
+				<label for="usuario">Usuario:</label><br>
+				<label for="password">Contraseña:</label><br>
+				<label for="rol">Rol:</label>
+			</article>
+			<article>
+				<input type="text" name="usuario" id="usuario" th:field="*{nombre}" placeholder="Introduzca nombre usuario" required><br>
+				<input type="password" name="password" id="password" th:field="*{password}" placeholder="Introduzca contraseña" required><br>
+				<select name="rol" id="rol" required>
+					<option value="">--SELECCIONAR--</option>
+					<option value="user">user</option>
+					<option value="admin">admin</option>
+				</select>
+			</article>
+		</section>
+		
+		<div class="error" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></div>
+            
+		<div class="error" th:if="${error}">
+	        <p th:text="${error}"></p>
+	    </div>
+        <div class="box-footer text-center">
+            <button class="btn">Editar usuario</button>
+        </div>
+    </form>
+	
+	<div th:if="${error}">
+        <p th:text="${error}"></p>
+    </div>
+	
+	<a class="btn btn-volver" th:href="@{/}">VOLVER</a>
+</body>
+</html>

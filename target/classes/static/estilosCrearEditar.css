@@ -1,0 +1,57 @@
+body{
+	font-size: 200%;
+	margin-top: 20vh;
+	text-align: center;
+}
+
+form{
+	border: 2px solid black;
+	border-radius: 20px;
+	margin: 0 auto;
+	margin-bottom: 100px;
+	width: 40vw;
+	padding: 20px;
+}
+
+section{
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	gap: 1rem;
+	
+	text-align: left;
+}
+
+label{
+	text-align: left;
+}
+
+input, select{
+	font-size: 70%;
+}
+
+.error{
+	color: red;
+}
+
+.btn{
+	background-color: blue;
+	color: white;
+	border-radius: 20px;
+	cursor: pointer;
+	
+	font-size: 1rem;
+	
+	margin-top: 1rem;
+	padding: 0.5rem 1rem;
+}
+
+.btn-volver{
+	border: 1px solid gray;
+	background-color: #F0F0F0;
+	color: black;
+	
+	font-size: 1.5rem;
+	
+	text-decoration: none;
+}
