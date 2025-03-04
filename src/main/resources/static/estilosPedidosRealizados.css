@@ -1,0 +1,57 @@
+body{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+	
+	height: 95vh;
+	text-align: center;
+}
+
+h1{
+	text-transform: uppercase;
+}
+
+form{
+	border: 2px solid black;
+	border-radius: 20px;
+		
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	
+	margin-bottom: 2rem;
+	padding: 1rem 2rem;
+	
+	width: 40rem;
+}
+
+input{
+	text-align: center;
+	height: 2rem;
+	width: 30%;
+}
+
+table{
+	margin: 0 auto;
+	height: 70vh;
+}
+
+td{
+	width: 20rem;
+}
+
+.btn{
+	border: 1px solid gray;
+	border-radius: 20px;
+	cursor: pointer;
+}
+
+a{
+	background-color: #F0F0F0;
+	color: black;
+	text-decoration: none;
+	
+	margin-top: 1.5rem;
+	padding: 0.5rem 1rem;
+}

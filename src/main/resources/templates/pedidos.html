@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizar Pedidos</title>
+	<link rel='stylesheet' href='estilosPedidosRealizados.css' type='text/css'>
+</head>
+<body>
+	<h1 class="text-center">Pedidos realizados</h1>
+	
+	<form th:action="@{/pedidos}" method="get">
+	<label for="hamburguesa">Buscar por hamburguesa:</label>
+		<input type="text" name="hamburguesa" id="hamburguesa" placeholder="Nombre de la hamburguesa" required>
+		<input class="btn" type="submit" value="Buscar">
+	</form>
+	
+	<table border="1">
+		<tr>
+			<th>Hamburguesa</th>
+			<th>Patatas</th>
+			<th>Bebida</th>
+		</tr>
+		<tr th:each="pedido: ${pedidos}">
+			<td th:text="${pedido.getHamburguesa()}"></td>
+			<td th:text="${pedido.getPatatas()}"></td>
+			<td th:text="${pedido.getBebida()}"></td>
+		</tr>
+	</table>
+	
+	<a class="btn" th:href="@{/}">VOLVER</a>
+</body>
+</html>

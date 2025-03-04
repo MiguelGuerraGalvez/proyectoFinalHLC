@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido</title>
+	<link rel='stylesheet' href='estilosPedido.css' type='text/css'>
+</head>
+<body>
+    <h1>PEDIDO REALIZADO</h1>
+	
+	<div class="pedido">
+		<p th:text="|Hamburguesa: ${hamburguesa}|" />
+		<p th:text="|Patatas: ${patatas}|" />
+		<p th:text="|Bebida: ${bebida}|" />
+		<h4 th:text="|Total a pagar ${suma}€|"></h4>
+		<p>Llegará entre unos 30 - 45 min</p>
+	</div>
+	
+	<a href="/">Volver a la página principal</a>
+</body>
+</html>

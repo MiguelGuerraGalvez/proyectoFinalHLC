@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+	<!--<link rel='stylesheet' href='estilosIndex.css' type='text/css'>-->
+	<link rel='stylesheet' href='estilosPedidosRealizados.css' type='text/css'>
+</head>
+<body>
+	<a class="btn" th:href="@{/crear}">Agregar Usuario</a>
+    <table border="1">
+		<tr>
+			<th>Usuario</th>
+			<th>Contraseña</th>
+			<th>Rol</th>
+			<th>Acciones</th>
+		</tr>
+		<tr th:each="usuario: ${usuarios}" >
+			<td th:text="${usuario.getNombre()}"></td>
+			<td th:text="${usuario.getPassword()}"></td>
+			<td th:text="${usuario.getRol()}"></td>
+			<td>
+				<a class="btn" th:href="@{/administracion/editar/{id}(id=${usuario.id})}">Editar</a>
+                <a class="btn" th:href="@{/administracion/{id}(id=${usuario.getId()})}">Eliminar</a>
+			</td>
+		</tr>
+	</table>
+	
+	<a class="btn" th:href="@{/}">Volver</a>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+	<link rel='stylesheet' href='estilosIndex.css' type='text/css'>
+</head>
+<body>
+    <h1 th:text="|Bienvenid@ ${usuario}|" />
+	
+	<div class="pedido">
+		<h2>REALIZAR PEDIDO</h2>
+		
+		<form method="post" th:object="${pedido}" th:action="@{/pedido}">
+			<input type="hidden" value="${usuario2.id}" th:field="*{idUsuario.id}">
+			<section>
+				<article>
+					Hamburguesa: <br>
+					Patatas: <br>
+					Bebida: <br>
+				</article>
+				<article>
+					<select name="hamburguesa" th:field="*{hamburguesa}" required>
+						<option value="">--Seleccionar--</option>
+						<!--<option value="Doble Cheeseburger">Doble Cheeseburger</option>
+						<option value="Big Mac">Big Mac</option>
+						<option value="CBO">CBO</option>
+						<option value="Cuarto de Libra">Cuarto de Libra</option>
+						<option value="McExtreme Bacon">McExtreme Bacon</option>-->
+						
+						<div th:each="comida: ${comidas}">
+							<option th:if="${comida.getTipo() == 'Hamburguesa'}" th:value="${comida.getNombre()}" th:text="${comida.getNombre()}"></option>
+						</div>
+						
+					</select><br>
+					<select name="patatas"  th:field="*{patatas}" required>
+						<option value="">--Seleccionar--</option>
+						<!--<option value="Patatas Fritas">Patatas Fritas</option>
+						<option value="Patatas Deluxe">Patatas Deluxe</option>
+						<option value="Patatas Gratinadas">Patatas Gratinadas</option>-->
+						
+						<div th:each="comida: ${comidas}">
+							<option th:if="${comida.getTipo() == 'Patatas'}" th:value="${comida.getNombre()}" th:text="${comida.getNombre()}"></option>
+						</div>
+					</select><br>
+					<select name="bebida"  th:field="*{bebida}" required>
+						<option value="">--Seleccionar--</option>
+						<!--<option value="Coca Cola">Coca Cola</option>
+						<option value="Coca Cola Zero">Coca Cola Zero</option>
+						<option value="Coca Cola Zero Zero">Coca Cola Zero Zero</option>
+						<option value="Fanta de Naranja">Fanta de Naranja</option>
+						<option value="Nestea">Nestea</option>
+						<option value="Agua">Agua</option>-->
+						
+						<div th:each="comida: ${comidas}">
+							<option th:if="${comida.getTipo() == 'Bebida'}" th:value="${comida.getNombre()}" th:text="${comida.getNombre()}"></option>
+						</div>
+					</select><br>
+				</article>
+			</section>
+			
+				
+			<input type="submit" value="Enviar">
+		</form>
+		
+		<a class="enlacePedidos" th:href="@{/pedidos?hamburguesa=}">Pedidos realizados</a>
+	</div>
+		
+	<div th:if="${rol} == 'admin'">
+		<a th:href="@{/administracion}">Panel de administración</a>
+	</div>
+	
+	<a th:href="@{/cerrar}">Cerrar Sesión</a>
+</body>
+</html>

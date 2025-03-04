@@ -1,0 +1,45 @@
+body{
+	font-size: 200%;
+	text-align: center;
+}
+
+h1{
+	margin-top: 3rem;
+}
+
+form{
+	border: 2px solid black;
+	border-radius: 20px;
+	height: 50vh;
+	margin: 0 auto;
+	width: 60vw;
+	padding: 1rem;
+}
+
+section{
+	height: 60%;
+	
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	gap: 1rem;
+	
+	text-align: left;
+}
+
+input{
+	font-size: 70%;
+}
+
+.error{
+	color: red;
+	font-size: 20px;
+}
+
+.btn{
+	background-color: blue;
+	color: white;
+	border-radius: 20px;
+	cursor: pointer;
+	padding: 0.5rem 1rem;
+}
