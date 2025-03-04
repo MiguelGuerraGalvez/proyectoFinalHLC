@@ -67,12 +67,8 @@ public class ProyectoController {
         modelo.addAttribute("pedido", pedido);
         
         modelo.addAttribute("rol", usuario.getRol());
-        
-        List<Comida> comidas = servicio3.listarComida();
-        
-        modelo.addAttribute("comidas", comidas);
-        
-        Comida h1 = new Comida("Doble Cheeseburger", "Hamburguesa", 4.5);
+
+		Comida h1 = new Comida("Doble Cheeseburger", "Hamburguesa", 4.5);
         Comida h2 = new Comida("Big Mac", "Hamburguesa", 4.5);
         Comida h3 = new Comida("Cuarto de Libra", "Hamburguesa", 5.5);
         Comida h4 = new Comida("Patatas Fritas", "Patatas", 0.5);
@@ -91,6 +87,12 @@ public class ProyectoController {
         servicio3.guardarComida(h7);
         servicio3.guardarComida(h8);
         servicio3.guardarComida(h9);
+        
+        List<Comida> comidas = servicio3.listarComida();
+        
+        modelo.addAttribute("comidas", comidas);
+        
+        
 		
 		return "index";
 	}
